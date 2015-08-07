@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Welcome to Air BnB</h2>
+   My name is :
+   <b><%= @user.name %></b><br><br>
+   My email is :
+   <b><%= @user.email %></b><br><br>
+
+<b><p>###Edit your rent place###<p><b>
+
+  <br><b><p>Name<p></b>
+  <form action="/<%= @user.id %>/<%= @property.id %>/update" method="post">
+      <input type="text" name="property[name]" placeholder= "name" value=<%=@property.name%>><br>
+      <br><b><p>Location<p></b>
+      <input type="text" name="property[location]" placeholder="location" value=<%=@property.location%>>
+      <br><b><p>Address<p></b>
+      <textarea name= "property[address]" rows= 3 cols= 30 value=<%=@property.address%>></textarea><br><br>
+      <input type="text" name="property[price]" placeholder="price" value=<%=@property.price%>><br><br>
+
+    <input type="submit" value="Submit">
+  </form><br>
+
+   <form action="/" method="get">
+    <input type="submit" value="log out">
+  </form>
+</div><br><br>

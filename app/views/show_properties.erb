@@ -1,0 +1,36 @@
+
+<div class="container"><br>
+  <h2>Your properties list</h2><br>
+      <% unless @properties.nil? %>
+        <p><% @properties.each do |property| %>
+        <%= property.name %><br><br></p>
+        <%= property.location %><br><br>
+        <%= property.address %><br><br>
+        <%= property.price %> </p><br>
+
+
+
+      <form action="/<%= @user.id %>/<%= property.id %>/edit" method="get">
+          <input name="_method" type="hidden" value="edit" />
+          <input type= "submit" value= "Edit"><br><br>
+      </form>
+
+      <form action="/<%= @user.id%>/<%= @property.id %>/delete" method="post">
+          <input name="_method" type="hidden" value="delete" />
+          <input type= "submit" value= "Delete"><br><br><br><br><br>
+      </form>
+
+
+
+      <% end %>
+
+<% end %>
+
+   <center><form action="/create/<%= @user.id%>" method="get">
+          <input name="_method" type="hidden" value="add" />
+          <input type= "submit" value= "Add new property"><br><br>
+      </form>
+            <form action="/" method="get">
+          <input type="submit" value="log out">
+        </form></center>
+</div>
